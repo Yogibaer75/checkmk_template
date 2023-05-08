@@ -4,3 +4,5 @@ pytest
 pytest-cov
 requests-mock
 black
+boto3
+botocore

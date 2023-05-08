@@ -25,4 +25,4 @@ ln -sv $WORKSPACE/bakery $OMD_ROOT/local/lib/check_mk/base/cee/plugins/bakery
 rm -rfv $OMD_ROOT/local/tmp
 ln -sv $WORKSPACE/temp $OMD_ROOT/local/tmp
 
-htpasswd -b $OMD_ROOT/etc/htpasswd cmkadmin cmkadmin
+source /omd/sites/cmk/.profile && echo 'cmkadmin' | /omd/sites/cmk/bin/cmk-passwd -i cmkadmin
