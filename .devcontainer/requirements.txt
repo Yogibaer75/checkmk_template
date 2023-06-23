@@ -1,8 +1,7 @@
+urllib3<2
 redfish
 flake8
 pytest
 pytest-cov
 requests-mock
 black
-boto3
-botocore
