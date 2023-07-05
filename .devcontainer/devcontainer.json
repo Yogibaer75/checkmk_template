@@ -12,11 +12,13 @@
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "ms-python.python",
+                "ms-python.flake8",
                 "littlefoxteam.vscode-python-test-adapter",
                 "rioj7.command-variable"
             ],
             // Bash as default shell.
-            "settings": {"terminal.integrated.defaultProfile.linux": "bash"}
+            "settings": {"terminal.integrated.defaultProfile.linux": "bash"},
+            "python.defaultInterpreterPath": "/omd/sites/cmk/bin/python3"
         }
     },
 
@@ -30,7 +32,7 @@
     "remoteUser": "cmk",
 
     "remoteEnv": {
-        "PATH": "${containerEnv:PATH}:/omd/sites/cmk/bin:/omd/sites/cmk/local/lib/python3/bin/",
+        "PATH": "/omd/sites/cmk/bin:/omd/sites/cmk/local/lib/python3/bin/:${containerEnv:PATH}",
         "OMD_ROOT": "/omd/sites/cmk",
         "OMD_SITE": "cmk",
         "CMK_SITE_ID": "cmk",
