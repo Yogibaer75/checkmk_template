@@ -4,7 +4,7 @@
     "name": "Checkmk",
     "build": {
         "dockerfile": "Dockerfile",
-        "args": { "VARIANT": "2.2.0p5" }
+        "args": { "VARIANT": "2.2.0p7" }
     },
 
     "customizations": {
@@ -13,6 +13,8 @@
             "extensions": [
                 "ms-python.python",
                 "ms-python.flake8",
+                "ms-python.pylint",
+                "ms-python.black-formatter",
                 "littlefoxteam.vscode-python-test-adapter",
                 "rioj7.command-variable"
             ],
