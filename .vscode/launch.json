@@ -63,7 +63,24 @@
             "${input:envHOST}"
             ],
             "console": "integratedTerminal",
-        }
+        },
+        {
+            "name": "agent_redfish",
+            "type": "python",
+            "request": "launch",
+            "program": "~/local/share/check_mk/agents/special/agent_redfish",
+            "args": [
+                "-P",
+                "http",
+                "-u",
+                "admin",
+                "-s",
+                "password",
+                "-p",
+                "8000",
+                "172.27.66.81",
+            ]
+        },
     ],
     "inputs": [
         {
