@@ -4,7 +4,7 @@
     "name": "Checkmk",
     "build": {
         "dockerfile": "Dockerfile",
-        "args": { "VARIANT": "2.2.0p12" }
+        "args": { "VARIANT": "master-daily" }
     },
 
     "customizations": {
@@ -15,6 +15,7 @@
                 "ms-python.flake8",
                 "ms-python.pylint",
                 "ms-python.black-formatter",
+                "ms-python.vscode-pylance",
                 "littlefoxteam.vscode-python-test-adapter",
                 "rioj7.command-variable"
             ],
@@ -24,11 +25,19 @@
         }
     },
 
+    // Mount complete volume for site directories
+    "mounts": [
+        { "source": "omd-sites", "target": "/opt/omd/sites", "type": "volume" },
+        { "source": "${localWorkspaceFolder}/lib", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk", "type": "bind"},
+        { "source": "${localWorkspaceFolder}/plugins", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk/plugins", "type": "bind" },
+        { "source": "${localWorkspaceFolder}/plugins_legacy", "target": "/opt/omd/sites/cmk/local/share/check_mk", "type": "bind"}
+    ],
+
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": ".devcontainer/symlink.sh",
+    "postCreateCommand": ".devcontainer/setpwd.sh",
 
     // Start omd every time the container is started
-    "postStartCommand": "omd start",
+    "postStartCommand": "omd restart",
 
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "cmk",
