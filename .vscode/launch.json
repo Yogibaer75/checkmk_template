@@ -77,8 +77,20 @@
                 "-s",
                 "password",
                 "-p",
-                "8001",
+                "8009",
                 "192.168.188.223",
+            ]
+        },
+        {
+            "name": "cmk - show host config",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "~/bin/cmk",
+            "args": [
+                "--debug",
+                "-vv",
+                "-D",
+                "${input:envHOST}"
             ]
         },
     ],
