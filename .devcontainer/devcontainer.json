@@ -30,7 +30,7 @@
     "mounts": [
         // { "source": "omd-sites", "target": "/opt/omd/sites", "type": "volume" },
         { "source": "${localWorkspaceFolder}/lib", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk", "type": "bind"},
-        { "source": "${localWorkspaceFolder}/plugins", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk/plugins", "type": "bind" },
+        { "source": "${localWorkspaceFolder}/plugins", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk_addons/plugins", "type": "bind" },
         { "source": "${localWorkspaceFolder}/plugins_legacy", "target": "/opt/omd/sites/cmk/local/share/check_mk", "type": "bind"}
     ],
 
