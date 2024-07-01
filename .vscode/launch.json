@@ -70,6 +70,7 @@
             "request": "launch",
             "program": "~/local/share/check_mk/agents/special/agent_redfish",
             "args": [
+                "--debug",
                 "-P",
                 "http",
                 "-u",
@@ -77,8 +78,8 @@
                 "-s",
                 "password",
                 "-p",
-                "8000",
-                "172.27.66.81",
+                "8009",
+                "192.168.188.223",
             ]
         },
     ],
