@@ -4,7 +4,7 @@
     "name": "Checkmk",
     "build": {
         "dockerfile": "Dockerfile",
-        "args": { "VARIANT": "2.3.0p8" }
+        "args": { "VARIANT": "2.3.0p10" }
     },
 
     "customizations": {

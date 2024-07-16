@@ -68,7 +68,7 @@
             "name": "agent_redfish",
             "type": "debugpy",
             "request": "launch",
-            "program": "/workspaces/checkmk_template_23/plugins/redfish/special_agents/agent_redfish_power.py",
+            "program": "/workspaces/checkmk_template_23/plugins/redfish/special_agents/agent_redfish.py",
             "args": [
                 "-vvv",
                 "--debug",
@@ -79,7 +79,7 @@
                 "--password-id",
                 "rfpass:/omd/sites/cmk/var/check_mk/passwords_merged",
                 "-p",
-                "8011",
+                "8000",
                 "192.168.188.223",
             ]
         },
