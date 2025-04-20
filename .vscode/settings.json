@@ -7,5 +7,6 @@
     "python.defaultInterpreterPath": "/omd/sites/cmk/bin/python3",
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.autoImportCompletions": true,
-    "flake8.cwd": "/omd/sites/cmk/"
+    "flake8.cwd": "/omd/sites/cmk/",
+    "flake8.enabled": false
 }
