@@ -2,8 +2,4 @@
 
 find $OMD_ROOT/tmp/ -name "*.pid" -exec rm {} \;
 
-source /omd/sites/cmk/.profile && $OMD_ROOT/bin/omd restart
-
-omd su cmk
-
-/omd/sites/cmk/bin/cmk-update-license-usage
+source /omd/sites/cmk/.profile && $OMD_ROOT/bin/omd restart && $OMD_ROOT/bin/omd su cmk && $OMD_ROOT/bin/cmk-update-license-usage
