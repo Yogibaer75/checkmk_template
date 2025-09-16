@@ -4,7 +4,7 @@
     "name": "Checkmk",
     "build": {
         "dockerfile": "Dockerfile",
-        "args": { "VARIANT": "2.4.0p8" }
+        "args": { "VARIANT": "2.4.0p11" }
     },
 
     "customizations": {
@@ -39,9 +39,10 @@
 
     // Start omd every time the container is started
     "postStartCommand": ".devcontainer/startup.sh",
+    "postAttachCommand": "omd restart && cmk-update-license-usage",
 
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "root",
+    "remoteUser": "cmk",
 
     "remoteEnv": {
         "PATH": "/omd/sites/cmk/bin:/omd/sites/cmk/local/lib/python3/bin/:${containerEnv:PATH}",
