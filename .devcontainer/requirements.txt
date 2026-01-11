@@ -1,6 +1,5 @@
-urllib3<2
+black
 flake8
-pytest
+isort
 pytest-cov
 requests-mock
-black
