@@ -1,5 +1,5 @@
 ARG VARIANT
-FROM checkmk/check-mk-cloud:${VARIANT}
+FROM checkmk/check-mk-ultimate:${VARIANT}
 
 RUN /docker-entrypoint.sh /bin/true
 
