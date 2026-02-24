@@ -12,10 +12,9 @@
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "ms-python.python",
-                //"ms-python.flake8",
-                "ms-python.pylint",
-                "charliermarsh.ruff",
                 "ms-python.vscode-pylance",
+                "ms-python.mypy-type-checker",
+                "charliermarsh.ruff",
                 "littlefoxteam.vscode-python-test-adapter",
                 "rioj7.command-variable"
             ],
@@ -30,7 +29,8 @@
         { "source": "${localWorkspaceFolder}/plugins", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk_addons/plugins", "type": "bind" },
         { "source": "${localWorkspaceFolder}/agents", "target": "/opt/omd/sites/cmk/local/share/check_mk/agents", "type": "bind"},
         { "source": "${localWorkspaceFolder}/temp", "target": "/opt/omd/sites/cmk/local_tmp", "type": "bind"},
-        { "source": "${localWorkspaceFolder}/nagios_plugins", "target": "/opt/omd/sites/cmk/local/lib/nagios/plugins", "type": "bind"}
+        { "source": "${localWorkspaceFolder}/nagios_plugins", "target": "/opt/omd/sites/cmk/local/lib/nagios/plugins", "type": "bind"},
+        { "source": "${localWorkspaceFolder}/local_changes", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk/plugins", "type": "bind" }
     ],
 
     // Use 'postCreateCommand' to run commands after the container is created.
