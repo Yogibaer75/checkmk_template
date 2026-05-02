@@ -1,5 +1,2 @@
-black
-flake8
-isort
 pytest-cov
 requests-mock
