@@ -4,7 +4,7 @@ FROM checkmk/check-mk-cloud:${VARIANT}
 RUN /docker-entrypoint.sh /bin/true
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends nodejs gcc
+    && apt-get -y install --no-install-recommends nodejs gcc sudo
 
 ADD requirements.txt /tmp/requirements.txt
 USER cmk

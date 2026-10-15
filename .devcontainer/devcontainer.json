@@ -4,7 +4,7 @@
     "name": "Checkmk",
     "build": {
         "dockerfile": "Dockerfile",
-        "args": { "VARIANT": "2.4.0p24" }
+        "args": { "VARIANT": "2.4.0p37" }
     },
 
     "customizations": {
@@ -30,7 +30,9 @@
     "mounts": [
         { "source": "${localWorkspaceFolder}/lib", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk", "type": "bind"},
         { "source": "${localWorkspaceFolder}/plugins", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk_addons/plugins", "type": "bind" },
-        { "source": "${localWorkspaceFolder}/plugins_legacy", "target": "/opt/omd/sites/cmk/local/share/check_mk", "type": "bind"}
+        { "source": "${localWorkspaceFolder}/plugins_legacy", "target": "/opt/omd/sites/cmk/local/share/check_mk", "type": "bind"},
+        { "source": "${localWorkspaceFolder}/temp", "target": "/opt/omd/sites/cmk/local_temp", "type": "bind" },
+        { "source": "${localWorkspaceFolder}/nagios_plugins", "target": "/opt/omd/sites/cmk/local/lib/nagios/plugins", "type": "bind" }
     ],
 
     // Use 'postCreateCommand' to run commands after the container is created.
