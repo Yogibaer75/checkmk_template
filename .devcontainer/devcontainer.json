@@ -6,7 +6,16 @@
         "dockerfile": "Dockerfile",
         "args": { "VARIANT": "2.5.0-daily" }
     },
-
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+    },
+    "overrideFeatureInstallOrder": [
+        "ghcr.io/devcontainers/features/node",
+        "ghcr.io/anthropics/devcontainer-features/claude-code"
+    ],
     "customizations": {
         "vscode": {
             // Add the IDs of extensions you want installed when the container is created.
@@ -33,7 +42,8 @@
         { "source": "${localWorkspaceFolder}/cmk_checks", "target": "/opt/omd/sites/cmk/local/lib/python3/cmk/plugins", "type": "bind" },
         { "source": "${localWorkspaceFolder}/agents", "target": "/opt/omd/sites/cmk/local/share/check_mk/agents", "type": "bind"},
         { "source": "${localWorkspaceFolder}/temp", "target": "/opt/omd/sites/cmk/local_temp", "type": "bind" },
-        { "source": "${localWorkspaceFolder}/nagios_plugins", "target": "/opt/omd/sites/cmk/local/lib/nagios/plugins", "type": "bind" }
+        { "source": "${localWorkspaceFolder}/nagios_plugins", "target": "/opt/omd/sites/cmk/local/lib/nagios/plugins", "type": "bind" },
+        { "source": "${localWorkspaceFolder}/.claude", "target": "/omd/sites/cmk/.claude", "type": "bind" }
     ],
 
     // Use 'postCreateCommand' to run commands after the container is created.
@@ -51,6 +61,7 @@
         "OMD_ROOT": "/omd/sites/cmk",
         "OMD_SITE": "cmk",
         "CMK_SITE_ID": "cmk",
-        "WORKSPACE": "${containerWorkspaceFolder}"
+        "WORKSPACE": "${containerWorkspaceFolder}",
+        "CLAUDE_CONFIG_DIR": "/omd/sites/cmk/.claude"
     }
 }
